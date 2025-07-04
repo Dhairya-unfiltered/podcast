@@ -1,13 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head><title>Login</title></head>
+<head>
+  <title>Login - PodcastHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-light: #4895ef;
+      --dark: #2b2d42;
+      --light: #f8f9fa;
+      --gray: #e9ecef;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .auth-container {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 40px;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+    
+    .logo {
+      color: var(--primary);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    h2 {
+      margin-bottom: 25px;
+      color: var(--dark);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #3a56d4;
+    }
+    
+    .auth-footer {
+      margin-top: 25px;
+      color: #6c757d;
+    }
+    
+    .auth-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .auth-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
-  <h2>Login</h2>
-  <form method="POST" action="/login">
-    <input type="text" name="username" required placeholder="Username"><br><br>
-    <input type="password" name="password" required placeholder="Password"><br><br>
-    <button type="submit">Login</button>
-  </form>
-  <p>No account? <a href="/signup">Signup here</a></p>
+  <div class="auth-container">
+    <a href="/" class="logo">Streamify</a>
+    <h2>Login to your account</h2>
+    
+    <form method="POST" action="/login">
+      <div class="form-group">
+        <input type="text" name="username" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    
+    <div class="auth-footer">
+      <p>No account? <a href="/signup">Sign up here</a></p>
+    </div>
+  </div>
 </body>
 </html>
