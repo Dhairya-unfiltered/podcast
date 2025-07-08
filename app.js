@@ -11,7 +11,7 @@ const Podcast = require('./models/Podcast');
 const User = require('./models/User');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.set('view engine', 'ejs');
@@ -150,4 +150,5 @@ app.get('/search', async (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(` Server running at http://localhost:${PORT}`));
+
+app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
